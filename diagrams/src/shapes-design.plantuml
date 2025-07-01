@@ -1,6 +1,5 @@
 @startuml
 
-
 class Point{
     - x: double
     - y: double
@@ -32,6 +31,7 @@ abstract class Shape {
 
 class Rectangle {
     + Rectangle(points: List<Point>)
+    - checkRectangleHasArea(points: List<Point>): boolean
     + getArea(): double
 }
 
@@ -54,6 +54,7 @@ class Circle {
 
 class Triangle {
     + Triangle(points: List<Point>)
+    - checkColinearity(points: List<Point>): boolean
     + getArea(): double
 }
 

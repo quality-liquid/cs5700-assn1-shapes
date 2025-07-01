@@ -1,0 +1,11 @@
+@startuml
+
+class Point
+class Line
+class Rectangle
+class Square
+class Ellipse
+class Circle
+class Triangle
+
+@enduml

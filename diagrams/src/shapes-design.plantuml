@@ -1,5 +1,6 @@
 @startuml
 
+class Shape
 class Point
 class Line
 class Rectangle
@@ -7,5 +8,13 @@ class Square
 class Ellipse
 class Circle
 class Triangle
+
+Line --* Point
+Shape --* Line
+Rectangle --|> Shape
+Square --|> Rectangle
+Ellipse --|> Shape
+Circle --|> Ellipse
+Triangle --|> Shape
 
 @enduml

@@ -1,16 +1,42 @@
 @startuml
 
-class Shape
-class Point
-class Line
+
+class Point{
+    - x: double
+    - y: double
+    + Point(x: double, y: double)
+    + getX(): double
+    + getY(): double
+    + clone(): Point
+    + moveX(delta: double): double
+    + moveY(delta: double): double
+}
+
+class Line {
+    - pointA: Point
+    - pointB: Point
+    + Line(pointA: Point, pointB: Point)
+    + getPointA(): Point
+    + getPointB(): Point
+    + getSlope(): double
+    + getLength(): double
+    + translate(deltaX: double, deltaY: double): void
+}
+
+abstract class Shape {
+    - points: List<Point>
+    + {abstract} getArea(): double
+    + translate(deltaX: double, deltaY: double): void
+}
+
 class Rectangle
 class Square
 class Ellipse
 class Circle
 class Triangle
 
-Line --* Point
-Shape --* Line
+Shape "1" --* "2..*" Point
+Line "1" --* "2" Point
 Rectangle --|> Shape
 Square --|> Rectangle
 Ellipse --|> Shape

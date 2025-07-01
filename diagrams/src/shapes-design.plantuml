@@ -26,16 +26,38 @@ class Line {
 abstract class Shape {
     - points: List<Point>
     + {abstract} getArea(): double
+    + getPoints(): List<Point>
     + translate(deltaX: double, deltaY: double): void
 }
 
-class Rectangle
-class Square
-class Ellipse
-class Circle
-class Triangle
+class Rectangle {
+    + Rectangle(points: List<Point>)
+    + getArea(): double
+}
 
-Shape "1" --* "2..*" Point
+class Square {
+    + Square(points: List<Point>)
+}
+
+class Ellipse {
+    - radiusX: double
+    - radiusY: double
+    + Ellipse(point: Point, radiusX: double, radiusY: double)
+    + getArea(): double
+    + getRadiusX(): double
+    + getRadiusY(): double
+}
+
+class Circle {
+    + Circle(point: Point, radius: double)
+}
+
+class Triangle {
+    + Triangle(points: List<Point>)
+    + getArea(): double
+}
+
+Shape "1" --* "1..*" Point
 Line "1" --* "2" Point
 Rectangle --|> Shape
 Square --|> Rectangle

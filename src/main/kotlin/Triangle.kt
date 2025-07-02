@@ -16,7 +16,7 @@ class Triangle(points: List<Point>) : Shape(points) {
         return Math.abs((p1.x * (p2.y - p3.y) + p2.x * (p3.y - p1.y) + p3.x * (p1.y - p2.y)) / 2.0)
     }
 
-    fun checkColinearity(points: List<Point>): Boolean {
+    private fun checkColinearity(points: List<Point>): Boolean {
         val (p1, p2, p3) = points
         return (p2.y - p1.y) * (p3.x - p2.x) == (p3.y - p2.y) * (p2.x - p1.x)
     }

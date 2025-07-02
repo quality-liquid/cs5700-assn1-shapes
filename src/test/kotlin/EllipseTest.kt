@@ -41,7 +41,7 @@ class EllipseTest {
         val ellipse = Ellipse(center, 2.0, 3.0)
         
         ellipse.translate(2.0, -1.0)
-        val translatedPoints = ellipse.getPoints()
+        val translatedPoints = ellipse.points
         
         assertEquals(3.0, translatedPoints[0].x)
         assertEquals(0.0, translatedPoints[0].y)
@@ -51,7 +51,7 @@ class EllipseTest {
     fun testGetPoints() {
         val center = Point(5.0, 7.0)
         val ellipse = Ellipse(center, 1.0, 2.0)
-        val points = ellipse.getPoints()
+        val points = ellipse.points
         
         assertEquals(1, points.size)
         assertEquals(5.0, points[0].x)

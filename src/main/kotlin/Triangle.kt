@@ -1,3 +1,5 @@
+import kotlin.math.abs
+
 class Triangle(points: List<Point>) : Shape(points) {
 
     init {
@@ -12,8 +14,8 @@ class Triangle(points: List<Point>) : Shape(points) {
     }
 
     override fun getArea(): Double {
-        val (p1, p2, p3) = points
-        return Math.abs((p1.x * (p2.y - p3.y) + p2.x * (p3.y - p1.y) + p3.x * (p1.y - p2.y)) / 2.0)
+        val (p1, p2, p3) = this.points
+        return abs((p1.x * (p2.y - p3.y) + p2.x * (p3.y - p1.y) + p3.x * (p1.y - p2.y)) / 2.0)
     }
 
     private fun checkColinearity(points: List<Point>): Boolean {

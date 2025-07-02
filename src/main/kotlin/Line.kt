@@ -1,9 +1,14 @@
 import kotlin.math.sqrt
 
-class Line(val pointA: Point, val pointB: Point) {
-
-    fun getPointA(): Point { return this.pointA.clone() }
-    fun getPointB(): Point { return this.pointB.clone() }
+class Line(pointA: Point, pointB: Point) {
+    val pointA: Point = pointA
+        get() {
+            return field.clone()
+        }
+    val pointB: Point = pointB
+        get() {
+            return field.clone()
+        }
 
     fun getSlope(): Double {
         val deltaX = this.pointB.x - this.pointA.x

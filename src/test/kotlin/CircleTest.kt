@@ -41,7 +41,7 @@ class CircleTest {
         val circle = Circle(center, 4.0)
         
         circle.translate(-1.0, 2.0)
-        val translatedPoints = circle.getPoints()
+        val translatedPoints = circle.points
         
         assertEquals(1.0, translatedPoints[0].x)
         assertEquals(5.0, translatedPoints[0].y)
@@ -51,7 +51,7 @@ class CircleTest {
     fun testGetPoints() {
         val center = Point(3.0, 4.0)
         val circle = Circle(center, 2.0)
-        val points = circle.getPoints()
+        val points = circle.points
         
         assertEquals(1, points.size)
         assertEquals(3.0, points[0].x)

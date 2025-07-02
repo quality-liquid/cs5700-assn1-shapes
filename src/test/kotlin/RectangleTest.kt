@@ -55,7 +55,7 @@ class RectangleTest {
         val rectangle = Rectangle(points)
         
         rectangle.translate(1.0, -1.0)
-        val translatedPoints = rectangle.getPoints()
+        val translatedPoints = rectangle.points
         
         assertEquals(1.0, translatedPoints[0].x)
         assertEquals(-1.0, translatedPoints[0].y)

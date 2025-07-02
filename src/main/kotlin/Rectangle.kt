@@ -1,3 +1,5 @@
+import kotlin.math.abs
+
 open class Rectangle(points: List<Point>) : Shape(points) {
     init {
         // check that there are only two points
@@ -17,9 +19,9 @@ open class Rectangle(points: List<Point>) : Shape(points) {
     }
 
     override fun getArea(): Double {
-        val (p1, p2) = points
-        val width = Math.abs(p1.x - p2.x)
-        val height = Math.abs(p1.y - p2.y)
+        val (p1, p2) = this.points
+        val width = abs(p1.x - p2.x)
+        val height = abs(p1.y - p2.y)
         return width * height
     }
 }

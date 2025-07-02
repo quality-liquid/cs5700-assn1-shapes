@@ -55,7 +55,7 @@ class TriangleTest {
         val triangle = Triangle(points)
         
         triangle.translate(1.0, 1.0)
-        val translatedPoints = triangle.getPoints()
+        val translatedPoints = triangle.points
         
         assertEquals(1.0, translatedPoints[0].x)
         assertEquals(1.0, translatedPoints[0].y)

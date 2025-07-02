@@ -1,8 +1,10 @@
 abstract class Shape(points: List<Point>) {
-    val points: MutableList<Point> = points as MutableList<Point>
+    private val _points: MutableList<Point> = points.toMutableList()
+    
+    val points: MutableList<Point>
         get() {
             val copies = mutableListOf<Point>()
-            for (point in field) {
+            for (point in _points) {
                 copies.add(point.clone())
             }
             return copies
@@ -11,7 +13,7 @@ abstract class Shape(points: List<Point>) {
     abstract fun getArea(): Double
 
     fun translate(deltaX: Double, deltaY: Double) {
-        for (point in this.points) {
+        for (point in _points) {
             point.translate(deltaX, deltaY)
         }
     }

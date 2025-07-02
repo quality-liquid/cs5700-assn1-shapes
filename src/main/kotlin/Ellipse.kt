@@ -1,6 +1,6 @@
 open class Ellipse(center: Point, val radiusX: Double, val radiusY: Double) : Shape(listOf(center)) {
 
     override fun getArea(): Double {
-        // todo
+        return Math.PI * radiusX * radiusY
     }
 }

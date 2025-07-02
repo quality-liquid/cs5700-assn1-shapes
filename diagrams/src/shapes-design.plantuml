@@ -58,8 +58,8 @@ class Triangle {
     + getArea(): double
 }
 
-Shape "1" --* "1..*" Point
-Line "1" --* "2" Point
+Shape "1" *-- "1..*" Point
+Line "1" *-- "2" Point
 Rectangle --|> Shape
 Square --|> Rectangle
 Ellipse --|> Shape
